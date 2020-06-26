@@ -5,7 +5,7 @@ class User(models.Model):
     class Meta:
         db_table = "users"
 
-    username = models.CharField(max_length=250)
+    username = models.CharField(max_length=250, unique=True)
     first_name = models.CharField(max_length=250, blank=True, null=True)
     last_name = models.CharField(max_length=250, blank=True, null=True)
-    email = models.EmailField()
+    email = models.EmailField(blank=True, null=True)

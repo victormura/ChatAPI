@@ -15,6 +15,6 @@ class Message(models.Model):
         db_table = "messages"
 
     text = models.TextField()
-    chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
+    chat = models.ForeignKey(Chat, on_delete=models.CASCADE, related_name="messages")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     data_time = models.DateTimeField(auto_now=True)
