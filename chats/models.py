@@ -7,7 +7,7 @@ class Chat(models.Model):
         db_table = "chats"
 
     name = models.CharField(max_length=250)
-    participants = models.ManyToManyField(User, null=True, blank=True)
+    participants = models.ManyToManyField(User, blank=True)
 
 
 class Message(models.Model):
