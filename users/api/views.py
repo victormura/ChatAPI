@@ -1,4 +1,5 @@
-from rest_framework import generics, mixins
+from rest_framework import generics
+from rest_framework.response import Response
 
 from .serializers import UserSerializer
 from users.models import User
@@ -18,7 +19,7 @@ class UserAPIView(generics.CreateAPIView):
             chat = Chat.objects.get(id=chat_id)
             user = self.create(request, *args, **kwargs)
             chat.participants.add(user.data.get('id'))
-            return chat
+            return user
         return self.create(request, *args, **kwargs)
 
 
