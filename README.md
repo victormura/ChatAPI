@@ -9,4 +9,5 @@
 3. Install packages `$ pip install -r requirements.txt`
 4. Migrate database `$ python manage.py migrate`
 5. Run app `$ python manage.py runserver`
+6. Open app http://127.0.0.1:8000/
     
